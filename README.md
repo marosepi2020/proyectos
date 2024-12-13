@@ -46,7 +46,9 @@ cat README.md
 Este repositorio incluye ejemplos con:
 
 -Lenguajes: Python, Bash, YAML.
+
 -Servicios de AWS:
+
   -Compute: EC2, Lambda, ECS.
   -Storage: S3, EFS, RDS.
 
@@ -67,6 +69,7 @@ Cuenta de AWS activa.
 ## Propósito del Portafolio
 
 El objetivo de este portafolio es:
+
   -Mostrar habilidades prácticas en AWS y DevOps.
   -Proveer ejemplos reales para demostrar competencias en roles relacionados con DevOps, SRE y arquitectura de soluciones.
   -Facilitar la replicación de los proyectos para aprendizaje personal.
