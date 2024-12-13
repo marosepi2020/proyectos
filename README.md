@@ -50,6 +50,7 @@ Este repositorio incluye ejemplos con:
 - Servicios de AWS:
 
   -Compute: EC2, Lambda, ECS.
+  
   -Storage: S3, EFS, RDS.
 
 Herramientas DevOps: CodePipeline, CodeBuild, CodeDeploy.
@@ -63,7 +64,9 @@ Cuenta de AWS activa.
 ## Herramientas instaladas:
 
   - AWS CLI configurada.
+    
   - Terraform (versión >= 1.0.0).
+    
   - Git.
 
 ## Propósito del Portafolio
@@ -71,16 +74,20 @@ Cuenta de AWS activa.
 El objetivo de este portafolio es:
 
   -Mostrar habilidades prácticas en AWS y DevOps.
+  
   -Proveer ejemplos reales para demostrar competencias en roles relacionados con DevOps, SRE y arquitectura de soluciones.
+  
   -Facilitar la replicación de los proyectos para aprendizaje personal.
 
 ## Cómo Contribuir
 
 Si deseas contribuir:
 
-  -Haz un fork de este repositorio.
-  -Crea una rama para tu contribución.
-  -Envíame un pull request con los detalles de tu propuesta.
+  - Haz un fork de este repositorio.
+  
+  - Crea una rama para tu contribución.
+    
+  - Envíame un pull request con los detalles de tu propuesta.
 
 ## Contacto
 
