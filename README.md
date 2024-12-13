@@ -38,6 +38,8 @@ cd 02-DevOps-Hands-On
 cd proyecto-ci-cd-codepipeline
 cat README.md
 
+---
+
 ## Tecnologías Utilizadas
 
 Este repositorio incluye ejemplos con:
