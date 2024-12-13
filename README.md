@@ -1,6 +1,8 @@
 # README Principal del Portafolio de Proyectos AWS
 
-Bienvenido a mi portafolio de proyectos en AWS. Este repositorio contiene una colección de proyectos prácticos diseñados para demostrar habilidades y conocimientos en roles como **DevOps**, **SRE**, **Arquitectura de Soluciones** y **DevOps CRE**.
+Bienvenido a mi portafolio de proyectos en AWS. 
+
+Este repositorio contiene una colección de proyectos prácticos diseñados para demostrar habilidades y conocimientos en roles como **DevOps**, **SRE**, **Arquitectura de Soluciones** y **DevOps CRE**.
 
 ---
 
