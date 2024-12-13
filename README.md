@@ -45,9 +45,9 @@ cat README.md
 
 Este repositorio incluye ejemplos con:
 
--Lenguajes: Python, Bash, YAML.
+- Lenguajes: Python, Bash, YAML.
 
--Servicios de AWS:
+- Servicios de AWS:
 
   -Compute: EC2, Lambda, ECS.
   -Storage: S3, EFS, RDS.
@@ -62,9 +62,9 @@ Cuenta de AWS activa.
 
 ## Herramientas instaladas:
 
-  -AWS CLI configurada.
-  -Terraform (versión >= 1.0.0).
-  -Git.
+  - AWS CLI configurada.
+  - Terraform (versión >= 1.0.0).
+  - Git.
 
 ## Propósito del Portafolio
 
@@ -85,8 +85,9 @@ Si deseas contribuir:
 ## Contacto
 
 Si tienes preguntas o sugerencias, no dudes en contactarme:
-  -Email: marosepi2020@gmail.com
-  -LinkedIn: [Perfil de LinkedIn](https://www.linkedin.com/in/mario-rodrigo-serrano-pineda/)
+  - Email: marosepi2020@gmail.com
+    
+  - LinkedIn: [Perfil de LinkedIn](https://www.linkedin.com/in/mario-rodrigo-serrano-pineda/)
 
 ## Licencia
 
