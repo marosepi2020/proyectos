@@ -66,8 +66,8 @@ Mira la serie completa en nuestro canal **[CloudOps Guild](https://www.youtube.c
 
 ## 🤝 **Conecta conmigo**
 - **YouTube:** [CloudOps Guild](https://www.youtube.com/@CloudOpsGuildCommunity)
-- **Medium:** [@tuusuario](https://medium.com/@marioserranopineda))
-- **LinkedIn:** [Perfil profesional](https://www.linkedin.com/in/mario-rodrigo-serrano-pineda/)
+- **Medium:** [@marioserranopineda](https://medium.com/@marioserranopineda))
+- **LinkedIn:** [Mario Serrano](https://www.linkedin.com/in/mario-rodrigo-serrano-pineda/)
 
 ---
 
