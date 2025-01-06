@@ -1,5 +1,8 @@
 # Domina las Conexiones SSH a EC2: De Novato a Experto
 
+![Domina las conexiones SSH](images/imagen1.webp)
+
+
 Bienvenido al repositorio oficial de la serie **"Domina las Conexiones SSH a EC2"**. Aquí encontrarás todos los recursos, comandos y materiales necesarios para aprender a conectar de manera segura y eficiente a tus instancias EC2 en AWS. Este proyecto está diseñado para principiantes y profesionales que quieren dominar las conexiones SSH y resolver problemas comunes en AWS.
 
 ---
