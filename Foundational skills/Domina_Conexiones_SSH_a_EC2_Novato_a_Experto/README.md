@@ -41,7 +41,7 @@ En esta serie aprenderás:
 ## 🎯 **Cómo usar este repositorio**
 1. Clona este repositorio:
    ```bash
-   git clone https://github.com/tuusuario/domina-ssh-ec2.git
+   git clone Foundational skills/Domina_Conexiones_SSH_a_EC2_Novato_a_Experto.git
    ```
 2. Explora las carpetas para encontrar los recursos que necesitas.
 3. Sigue los tutoriales paso a paso disponibles en los videos de la serie.
