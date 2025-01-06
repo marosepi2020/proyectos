@@ -49,7 +49,7 @@ En esta serie aprenderás:
 ---
 
 ## 📹 **Accede a la serie completa en YouTube**
-Mira la serie completa en nuestro canal **[CloudOps Guild](https://www.youtube.com/channel/tu-canal)**. Cada video está diseñado para complementar los recursos de este repositorio.
+Mira la serie completa en nuestro canal **[CloudOps Guild]([https://www.youtube.com/channel/tu-canal](https://www.youtube.com/@CloudOpsGuildCommunity))**. Cada video está diseñado para complementar los recursos de este repositorio.
 
 ---
 
@@ -65,7 +65,7 @@ Mira la serie completa en nuestro canal **[CloudOps Guild](https://www.youtube.c
 ---
 
 ## 🤝 **Conecta conmigo**
-- **YouTube:** [CloudOps Guild](https://www.youtube.com/channel/tu-canal)
+- **YouTube:** [CloudOps Guild]([https://www.youtube.com/channel/tu-canal](https://www.youtube.com/@CloudOpsGuildCommunity))
 - **Twitter:** [@tuusuario](https://twitter.com/tuusuario)
 - **LinkedIn:** [Perfil profesional](https://linkedin.com/in/tuusuario)
 
