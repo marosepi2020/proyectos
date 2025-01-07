@@ -27,6 +27,13 @@ Cada proyecto está organizado en carpetas individuales, y cada carpeta incluye 
    - Arquitecturas serverless con Lambda y DynamoDB.
    - Sistemas distribuidos con ECS y RDS.
 
+5. **SysOps**
+   - Tareas del día a día de la operación Cloud.
+   - Administración de componentes cloud.
+
+6. **IA Projects**
+   - Proyectos básicos para aprender sobre Inteligencía artificial y Machine Learning.
+
 ---
 
 ## Cómo Navegar
