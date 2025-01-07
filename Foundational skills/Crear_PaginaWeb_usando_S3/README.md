@@ -103,7 +103,7 @@ Mira el tutorial completo de este proyecto en nuestro canal **[CloudOps Guild](h
 - **LinkedIn:** [Mario Serrano](https://www.linkedin.com/in/mario-rodrigo-serrano-pineda/)
 
 # 📺 **Accede al documento del paso a paso en los recursos**
-Mira el paso a paso completo de este proyecto en el pdf **Crear una página web estática** ![Crear una página web estática](recursos/Proyecto 1- Nivel 100_ CrearPáginaWebconS3enAWS.pdf). Encontrarás explicaciones detalladas y demostraciones paso a paso.
+Mira el paso a paso completo de este proyecto en el pdf **Crear una página web estática** [Crear una página web estática](recursos/Proyecto1-Nivel100_CrearPáginaWebconS3enAWS.pdf). Encontrarás explicaciones detalladas y demostraciones paso a paso.
 
 ---
 
