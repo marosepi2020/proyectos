@@ -1,6 +1,6 @@
 # AWS AI Practitioner Challenge
 
-![Challenge](imagenes/motivacion challenge1.png)
+![Challenge](imagenes/motivacionchallenge1.png)
 
 ## ✨ Prepárate para el Challenge AWS AI Practitioner ✨
 
