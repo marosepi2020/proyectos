@@ -1,5 +1,7 @@
 # AWS AI Practitioner Challenge
 
+![Challenge](imagenes/motivacionchallenge1.png)
+
 ## ✨ Prepárate para el Challenge AWS AI Practitioner ✨
 
 ¡Bienvenido al desafío que transformará tu futuro profesional en la nube! En este reto de 5 semanas, dominarás los conceptos clave para obtener la certificación AWS AI Practitioner, con la oportunidad de acceder a 2 semanas adicionales de contenido exclusivo para suscriptores. 🌟
