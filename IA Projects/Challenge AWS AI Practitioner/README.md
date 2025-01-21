@@ -62,6 +62,8 @@ Aplicación de conceptos en escenarios reales.
 
 Nota: Estas semanas son exclusivas para suscriptores que formen parte de nuestras redes sociales y cumplan con los requisitos de participación. 🔑
 
+Sigue el programa para acceder a los recursos aquí [Programa Challenge](recursos/Programa_Challenge_AI_practitioner.pdf)
+
 ## 🔥 ¿Por qué unirte?
 
 Aprende de expertos en AWS y Cloud Computing.
