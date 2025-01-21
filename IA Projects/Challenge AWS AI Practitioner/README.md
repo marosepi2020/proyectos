@@ -102,7 +102,7 @@ Si eres parte de nuestra comunidad en Meetup, estás suscrito al canal de YouTub
 
 **2. [Guía del examen AI practitioner](recursos/AWS-Certified-AI-Practitioner_Exam-Guide.pdf)**
 
-**3. [Plan de estudiós](recursos/Plan_de_estudios_AI_practitioner_ semanas.pdf)**
+**3. [Plan de estudiós](recursos/Plan_de_estudios_AI_practitioner_semanas.pdf)**
 
 4. Guía pdf: 50 términos, conceptos y servicios más relevantes para el AI Practitioner
 
