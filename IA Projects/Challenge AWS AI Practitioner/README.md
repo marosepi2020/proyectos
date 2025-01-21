@@ -129,7 +129,12 @@ Si eres parte de nuestra comunidad en Meetup, estás suscrito al canal de YouTub
 
 ## ✨ ¡Prepárate para llevar tus habilidades al siguiente nivel y destacar en el mundo del Cloud Computing! ✨
 
-Fecha de lanzamiento: 21 de Enero, 7:00 PM (COL).
+**Fecha de lanzamiento: 21 de Enero, 7:00 PM (COL).**
 
-✨ ¡Prepárate para llevar tus habilidades al siguiente nivel y destacar en el mundo del Cloud Computing! ✨
+---
+
+## 📝 **Licencia**
+Este proyecto está bajo la licencia MIT. Puedes consultar los detalles en el archivo [LICENSE](LICENSE).
+
+---
 
