@@ -126,7 +126,6 @@ Si eres parte de nuestra comunidad en Meetup, estás suscrito al canal de YouTub
 # 📅 ¡El desafío comienza pronto!
 
 ![AI_Practitioner_badge](imagenes/AI-Practitioner_badge.png)
-![early_adopter_badge](imagenes/AI_early_adopter.png)
 
 ## ✨ ¡Prepárate para llevar tus habilidades al siguiente nivel y destacar en el mundo del Cloud Computing! ✨
 
