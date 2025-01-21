@@ -99,15 +99,25 @@ Si eres parte de nuestra comunidad en Meetup, estás suscrito al canal de YouTub
 ## Recursos del challenge
 
 **1. [Paths de certificación](recursos/AWS_certification_paths.pdf)**
+
 **2. [Guía del examen AI practitioner](recursos/AWS-Certified-AI-Practitioner_Exam-Guide.pdf)**
+
 **3. [Plan de estudiós](recursos/Plan_de estudios_AI_practitioner_ semanas.pdf)**
+
 4. Guía pdf: 50 términos, conceptos y servicios más relevantes para el AI Practitioner
+
 5. Checklist de estudio
+
 6. guía de estudio
+
 7. Listado de preguntas frecuentes sobre la certificación AWS AI Practitioner
+
 8. Preguntas y respuestas tipo examen
+
 9. Guía de laboratorio: "Crear un chatbot básico con Lex"
+
 10. Guía de laboratorio: "Texto a Voz personalizado"
+
 11. Guía para el Laboratorio: Flujo Integrador con Rekognition, Comprehend y Translate
 
 
