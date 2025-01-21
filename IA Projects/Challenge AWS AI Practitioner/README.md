@@ -102,7 +102,7 @@ Si eres parte de nuestra comunidad en Meetup, estás suscrito al canal de YouTub
 
 **2. [Guía del examen AI practitioner](recursos/AWS-Certified-AI-Practitioner_Exam-Guide.pdf)**
 
-**3. [Plan de estudiós](recursos/Plan_de_estudios_AI_practitioner_ semanas.pdf)**
+**3. [Plan de estudiós](recursos/Plan_de_estudios_AI_practitioner_semanas.pdf)**
 
 4. Guía pdf: 50 términos, conceptos y servicios más relevantes para el AI Practitioner
 
@@ -126,11 +126,15 @@ Si eres parte de nuestra comunidad en Meetup, estás suscrito al canal de YouTub
 # 📅 ¡El desafío comienza pronto!
 
 ![AI_Practitioner_badge](imagenes/AI-Practitioner_badge.png)
-![early_adopter_badge](imagenes/AI_early_adopter.png)
 
 ## ✨ ¡Prepárate para llevar tus habilidades al siguiente nivel y destacar en el mundo del Cloud Computing! ✨
 
-Fecha de lanzamiento: 21 de Enero, 7:00 PM (COL).
+**Fecha de lanzamiento: 21 de Enero, 7:00 PM (COL).**
 
-✨ ¡Prepárate para llevar tus habilidades al siguiente nivel y destacar en el mundo del Cloud Computing! ✨
+---
+
+## 📝 **Licencia**
+Este proyecto está bajo la licencia MIT. Puedes consultar los detalles en el archivo [LICENSE](LICENSE).
+
+---
 

@@ -42,3 +42,10 @@ Este repositorio contiene proyectos diseñados para desarrollar habilidades en l
 
 ## ✨ ¡Prepárate para llevar tus habilidades al siguiente nivel y destacar en el mundo del Cloud Computing! ✨
 
+---
+
+## 📝 **Licencia**
+Este proyecto está bajo la licencia MIT. Puedes consultar los detalles en el archivo [LICENSE](LICENSE).
+
+---
+
