@@ -18,6 +18,8 @@ Tips para el éxito durante el programa.
 
 [Plan de entrenamiento digital](https://explore.skillbuilder.aws/learn/public/learning_plan/view/2193/standard-exam-prep-plan-aws-certified-ai-practitioner-aif-c01)
 
+[Grabación](https://youtube.com/live/VkEY7_1L330)
+
 ## Semana 2: 🧠 Fundamentos de ML y IA
 
 Principios de Machine Learning y Artificial Intelligence.
