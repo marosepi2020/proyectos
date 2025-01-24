@@ -20,6 +20,8 @@ Tips para el éxito durante el programa.
 
 [Grabación](https://youtube.com/live/VkEY7_1L330)
 
+[Slides](recursos/Semana1_Challenge_AWS_AI_Practitioner.pdf)
+
 ## Semana 2: 🧠 Fundamentos de ML y IA
 
 Principios de Machine Learning y Artificial Intelligence.
