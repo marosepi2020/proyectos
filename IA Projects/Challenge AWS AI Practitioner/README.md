@@ -110,9 +110,9 @@ Si eres parte de nuestra comunidad en Meetup, estás suscrito al canal de YouTub
 
 **3. [Plan de estudios](recursos/Plan_de_estudios_AI_practitioner_semanas.pdf)**
 
-**4. [Guía pdf: 50 términos, conceptos y servicios más relevantes para el AI Practitioner](recursos/Listado_de_terminos_esenciales.pdf)
+**4. [Guía pdf: 50 términos, conceptos y servicios más relevantes para el AI Practitioner](recursos/Listado_de_terminos_esenciales.pdf)**
 
-**5. [Checklist de estudio](recursos/Checklist_estudio_AI_Practitioner.xlsx)
+**5. [Checklist de estudio](recursos/Checklist_estudio_AI_Practitioner.xlsx)**
 
 6. guía de estudio
 
