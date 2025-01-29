@@ -30,6 +30,10 @@ Casos de uso en industrias clave.
 
 Introducción a las herramientas de AWS para IA.
 
+[Grabación](https://youtu.be/5LBPsqmE7YI)
+
+[Slides](recursos/Semana2_Challenge_AWS_AI_Practitioner.pdf)
+
 ## Semana 3: 🤖 Desarrollo de soluciones ML e IA Generativa
 
 Creación de modelos de Machine Learning.
@@ -126,7 +130,13 @@ Si eres parte de nuestra comunidad en Meetup, estás suscrito al canal de YouTub
 
 11. Guía para el Laboratorio: Flujo Integrador con Rekognition, Comprehend y Translate
 
-
+**12. Videos de Laboratorios Demo Servicios AWS**
+    **- [Amazon Comprehend](https://youtu.be/8Yp7tZYL9dc)**
+    - [Amazon Lex]
+    - [Amazon Polly]
+    - [Amazon Textract]
+    - [Amazon Bedrock]
+    - [Amazon Sage Maker]
 
 
 # 📅 ¡El desafío comienza pronto!
