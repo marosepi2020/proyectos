@@ -132,18 +132,17 @@ Si eres parte de nuestra comunidad en Meetup, estás suscrito al canal de YouTub
 
 **12. Videos de Laboratorios Demo Servicios AWS**
 
-    **- [Amazon Comprehend](https://youtu.be/8Yp7tZYL9dc)**
+**12.1 - [Amazon Comprehend](https://youtu.be/8Yp7tZYL9dc)**
 
-    - [Amazon Lex]
+    12.2 - [Amazon Lex]
 
+    12.3 - [Amazon Polly]
 
-    - [Amazon Polly]
+    12.4 - [Amazon Textract]
 
-    - [Amazon Textract]
+    12.5 - [Amazon Bedrock]
 
-    - [Amazon Bedrock]
-
-    - [Amazon Sage Maker]
+    12.6 - [Amazon Sage Maker]
 
 
 # 📅 ¡El desafío comienza pronto!
