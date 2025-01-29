@@ -131,11 +131,18 @@ Si eres parte de nuestra comunidad en Meetup, estás suscrito al canal de YouTub
 11. Guía para el Laboratorio: Flujo Integrador con Rekognition, Comprehend y Translate
 
 **12. Videos de Laboratorios Demo Servicios AWS**
+
     **- [Amazon Comprehend](https://youtu.be/8Yp7tZYL9dc)**
+
     - [Amazon Lex]
+
+
     - [Amazon Polly]
+
     - [Amazon Textract]
+
     - [Amazon Bedrock]
+
     - [Amazon Sage Maker]
 
 
