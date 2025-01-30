@@ -1,4 +1,5 @@
 # 🚀 Aplicación de Programación de Tareas Diarias con Amazon PartyRock
+![partyrock](imagenes/AmazonPartyRock.png)
 
 ## 📝 Descripción del Proyecto
 En este emocionante proyecto, desarrollaremos una **Aplicación de Programación de Tareas Diarias** utilizando **Amazon PartyRock**. 🎯 Esta aplicación está diseñada para mejorar nuestra **productividad y organización diaria** a través de la IA generativa. 🧠✨
