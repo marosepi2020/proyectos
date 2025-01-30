@@ -8,7 +8,7 @@ Este repositorio contiene proyectos diseñados para desarrollar habilidades en l
 - **Descripción**: 
 - **Nivel de Dificultad**: Básico
 - **Tiempo de Duración**: 30 minutos
-- **Objetivo de Aprendizaje**
+- **Objetivo de Aprendizaje:**
 En este proyecto, usaremos PartyRock para desarrollar una 'Aplicación de programación de tareas diarias' destinada a mejorar nuestra productividad y organización. 
 Para aquellos que no están familiarizados con PartyRock, es una nueva plataforma ofrecida por AWS diseñada para simplificar el desarrollo de aplicaciones mediante el uso de IA generativa. 
 
