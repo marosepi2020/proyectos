@@ -16,8 +16,8 @@ Objetivos y plan de estudios.
 
 Tips para el éxito durante el programa.
 
-Free Foundational exam retake [Voucher](https://www.pearsonvue.com/us/en/aws/emfreeretake25.html)
-(if you need it)
+**Free Foundational exam retake [Voucher](https://www.pearsonvue.com/us/en/aws/emfreeretake25.html)
+(if you need it)**
 
 [Plan de entrenamiento digital](https://explore.skillbuilder.aws/learn/public/learning_plan/view/2193/standard-exam-prep-plan-aws-certified-ai-practitioner-aif-c01)
 
