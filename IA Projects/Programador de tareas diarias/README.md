@@ -43,6 +43,7 @@ Repasaremos los aprendizajes obtenidos, discutiremos la importancia de la automa
 
 ## 📚 Recursos Adicionales
 - 📖 [Documentación oficial de Amazon PartyRock](https://aws.amazon.com/partyrock/)
+- 📖 [Video cómo abrir tu cuenta AWS gratuita](https://youtu.be/zsUu33c8e84?si=SzKWvjR3Dzdu2aHX)
 - 🆓 [AWS Free Tier](https://aws.amazon.com/free/)
 - 🤖 [Guía de introducción a IA generativa](https://aws.amazon.com/what-is/generative-ai/)
 
