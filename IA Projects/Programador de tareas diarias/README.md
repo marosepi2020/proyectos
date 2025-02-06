@@ -43,6 +43,7 @@ Repasaremos los aprendizajes obtenidos, discutiremos la importancia de la automa
 
 ## 📚 Recursos Adicionales
 - 📖 [Documentación oficial de Amazon PartyRock](https://aws.amazon.com/partyrock/)
+- 📖 [Video cómo abrir tu cuenta AWS gratuita](https://youtu.be/zsUu33c8e84?si=SzKWvjR3Dzdu2aHX)
 - 🆓 [AWS Free Tier](https://aws.amazon.com/free/)
 - 🤖 [Guía de introducción a IA generativa](https://aws.amazon.com/what-is/generative-ai/)
 
@@ -54,9 +55,9 @@ Repasaremos los aprendizajes obtenidos, discutiremos la importancia de la automa
 💼 **LinkedIn:** [Mario Serrano](https://www.linkedin.com/in/mario-rodrigo-serrano-pineda/)
 
 ## 📢 ¡Síguenos en nuestras redes!
-📝 **Blog CloudOpsGuild:** [Blog](https://blog.cloudopsguild.com)  
+📝 **Blog CloudOpsGuild:** [Blog](https://cloudopsguild.com/blog/)  
 💼 **LinkedIn CloudOpsGuild:** [CloudOps Guild](https://www.linkedin.com/company/cloudopsguild/)  
-📅 **MeetUp:** [Grupo MeetUp AWS Cartagena Community](https://www.meetup.com/aws-cartagena/)  
+📅 **MeetUp:** [Grupo MeetUp AWS Cartagena Community](https://www.meetup.com/es-ES/aws-colombia-cartagena/)  
 📘 **Facebook:** [AWS Cartagena Community](https://www.facebook.com/aws.cartagena/)  
 
 ---
