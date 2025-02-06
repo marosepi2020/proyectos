@@ -30,9 +30,9 @@ Casos de uso en industrias clave.
 
 Introducción a las herramientas de AWS para IA.
 
-[Grabación](https://youtu.be/5LBPsqmE7YI)
+[Grabación](https://youtube.com/live/q_ueIGCyGb0)
 
-[Slides](recursos/Semana2_Challenge_AWS_AI_Practitioner.pdf)
+[Slides](recursos/Semana3_ChallengeAWS_AI_Practitioner.pdf)
 
 ## Semana 3: 🤖 Desarrollo de soluciones ML e IA Generativa
 
@@ -41,6 +41,10 @@ Creación de modelos de Machine Learning.
 Conceptos de IA Generativa.
 
 Ingeniería de Prompts.
+
+[Grabación](https://youtu.be/5LBPsqmE7YI)
+
+[Slides](recursos/Semana2_Challenge_AWS_AI_Practitioner.pdf)
 
 ## Semana 4: 🔧 Optimización, seguridad y gobierno
 
