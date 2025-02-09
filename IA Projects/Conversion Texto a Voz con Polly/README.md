@@ -83,7 +83,7 @@ Asegúrate de que la función Lambda tenga un rol de IAM con los siguientes perm
 
 **3. [archivo .MP3 con audio](recursos/descripcioncomunidad2.mp3)**
 
-**4. [Video del laboratorio](https://youtu.be/j2zwFkNLQfI)*
+**4. [Video del laboratorio](https://youtu.be/j2zwFkNLQfI)**
 
 ---
 
