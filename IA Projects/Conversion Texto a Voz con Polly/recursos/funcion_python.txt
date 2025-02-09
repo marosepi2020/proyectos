@@ -1,0 +1,48 @@
+import boto3
+import os
+import uuid
+
+def lambda_handler(event, context):
+    # Crear clientes para S3 y Polly
+    s3_client = boto3.client('s3')
+    polly_client = boto3.client('polly')
+    
+    # Obtener detalles del archivo desde el evento de S3
+    bucket_name = event['Records'][0]['s3']['bucket']['name']
+    object_key = event['Records'][0]['s3']['object']['key']
+    
+    # Descargar el archivo de texto desde S3
+    download_path = f"/tmp/{uuid.uuid4()}.txt"
+    s3_client.download_file(bucket_name, object_key, download_path)
+    
+    # Leer el contenido del archivo de texto
+    with open(download_path, 'r') as file:
+        text_content = file.read()
+    
+    # Validar que el contenido no esté vacío
+    if not text_content.strip():
+        return {
+            'statusCode': 400,
+            'body': 'El archivo de texto está vacío.'
+        }
+    
+    # Usar Amazon Polly para generar el audio
+    response = polly_client.synthesize_speech(
+        Text=text_content,
+        OutputFormat='mp3',
+        VoiceId='Joanna'  # Puedes cambiar la voz (Joanna, Matthew, etc.)
+    )
+    
+    # Guardar el archivo de audio en /tmp
+    audio_file_path = f"/tmp/{uuid.uuid4()}.mp3"
+    with open(audio_file_path, 'wb') as audio_file:
+        audio_file.write(response['AudioStream'].read())
+    
+    # Subir el archivo de audio generado a S3
+    audio_object_key = f"audio/{os.path.splitext(object_key)[0]}.mp3"
+    s3_client.upload_file(audio_file_path, bucket_name, audio_object_key)
+    
+    return {
+        'statusCode': 200,
+        'body': f"El archivo de audio se generó y se guardó en {bucket_name}/{audio_object_key}"
+    }

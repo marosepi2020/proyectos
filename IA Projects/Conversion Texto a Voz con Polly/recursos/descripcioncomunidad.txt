@@ -1,0 +1,8 @@
+﻿Bienvenidos
+
+
+Somos una comunidad de entusiastas de la tecnología, interactiva y educativa dedicada a formar a los ingenieros Cloud de la proxima generación. 
+Nuestra Misión: Empoderar a UN MILLÓN de aprendices para que dominen las tecnologías cloud y la arquitectura de AWS.
+
+
+Este canal es de la comunidad CloudOps Guild donde se va a compartir videos de Cursos, talleres, challenges, webinar que se hagan en la comunidad.
