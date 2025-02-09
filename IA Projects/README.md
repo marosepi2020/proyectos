@@ -12,6 +12,12 @@ Este repositorio contiene proyectos diseñados para desarrollar habilidades en l
 En este proyecto, usaremos PartyRock para desarrollar una 'Aplicación de programación de tareas diarias' destinada a mejorar nuestra productividad y organización. 
 Para aquellos que no están familiarizados con PartyRock, es una nueva plataforma ofrecida por AWS diseñada para simplificar el desarrollo de aplicaciones mediante el uso de IA generativa. 
 
+### Conversión de Texto a Voz con Amazon Polly
+- **Descripción**: Convertir texto dentro de un archivo .TXT que se sube a un Bucket S3 a voz con Amazon Polly.
+- **Nivel de Dificultad**: Básico
+- **Tiempo de Duración**: 45 minutos
+- **Objetivo de Aprendizaje**: Al completar este laboratorio, los participantes serán capaces de diseñar, implementar y automatizar un flujo en AWS que convierta archivos de texto almacenados en un bucket de S3 en archivos de audio mediante Amazon Polly. Aprenderán a configurar y desplegar funciones AWS Lambda, gestionar permisos con IAM, integrar servicios en la nube y optimizar el procesamiento de texto a voz, asegurando una ejecución eficiente y escalable en entornos reales.
+
 ### Asistente de compras inteligentes
 - **Descripción**: 
 - **Nivel de Dificultad**: Intermedio

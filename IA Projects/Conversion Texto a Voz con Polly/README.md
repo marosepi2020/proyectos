@@ -4,6 +4,10 @@
 
 Este laboratorio contiene el paso a paso para hacer una aplicación donde cargamos un archivo .TXT a un bucket S3 y a través de Amazon Polly convertimos ese texto en audio, como resultado en nuestro bucket queda un archivo .MP3. 
 
+### 🎯 Objetivo de Aprendizaje
+
+Al completar este laboratorio, los participantes serán capaces de diseñar, implementar y automatizar un flujo en AWS que convierta archivos de texto almacenados en un bucket de S3 en archivos de audio mediante Amazon Polly. Aprenderán a configurar y desplegar funciones AWS Lambda, gestionar permisos con IAM, integrar servicios en la nube y optimizar el procesamiento de texto a voz, asegurando una ejecución eficiente y escalable en entornos reales. 🚀
+
 ### 🛠️ Servicios usados durante el laboratorio
 
 - 🔹 **S3**
@@ -12,7 +16,7 @@ Este laboratorio contiene el paso a paso para hacer una aplicación donde cargam
 - 🔹 **CloudWatch**
 
 ### 🗂️ Dibujo del diagrama de arquitectura del laboratorio
-- 📍 Creación paso a paso del diagrama y ecplicación en video abajo en Recursos.
+- 📍 Creación paso a paso del diagrama y explicación en video abajo en Recursos.
 
 ![diagrama](imagenes/dibujo_arquitectura_laboratorio.png)
 
@@ -79,7 +83,7 @@ Asegúrate de que la función Lambda tenga un rol de IAM con los siguientes perm
 
 **3. [archivo .MP3 con audio](recursos/descripcioncomunidad2.mp3)**
 
-**4. [Video del laboratorio](URL)**
+**4. [Video del laboratorio](https://youtu.be/j2zwFkNLQfI)*
 
 ---
 
