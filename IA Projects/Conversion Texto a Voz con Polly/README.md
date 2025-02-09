@@ -12,6 +12,7 @@ Este laboratorio contiene el paso a paso para hacer una aplicación donde cargam
 - 🔹 **CloudWatch**
 
 ### 🗂️ Dibujo del diagrama de arquitectura del laboratorio
+- 📍 Creación paso a paso del diagrama y ecplicación en video abajo en Recursos.
 
 ![diagrama](imagenes/dibujo_arquitectura_laboratorio.png)
 
@@ -73,8 +74,11 @@ Asegúrate de que la función Lambda tenga un rol de IAM con los siguientes perm
 ## Recursos del challenge
 
 **1. [archivo TXT con texto a convertir](recursos/descripcioncomunidad.txt)**
+
 **2. [codigo en Python función Lambda](recursos/funcion_python.txt)**
+
 **3. [archivo .MP3 con audio](recursos/descripcioncomunidad2.mp3)**
+
 **4. [Video del laboratorio](URL)**
 
 ---
