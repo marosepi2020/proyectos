@@ -75,7 +75,7 @@ Asegúrate de que la función Lambda tenga un rol de IAM con los siguientes perm
 
 ---
 
-## Recursos del challenge
+## Recursos del laboratorio
 
 **1. [archivo TXT con texto a convertir](recursos/descripcioncomunidad.txt)**
 
