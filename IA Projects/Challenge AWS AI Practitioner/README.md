@@ -57,6 +57,10 @@ Seguridad y cumplimiento en proyectos de IA.
 
 Gobernanza en soluciones basadas en la nube.
 
+[Grabación](https://youtube.com/live/_xnJ-BEabgA)
+
+[Slides](recursos/Semana4_Challenge_AWS_AI_Practitioner.pdf)
+
 ## Semana 5: 🌟 Amazon Q y Amazon Bedrock
 
 Exploración de Amazon Q.
@@ -143,9 +147,9 @@ Si eres parte de nuestra comunidad en Meetup, estás suscrito al canal de YouTub
 
     12.2 - [Amazon Lex]
 
-    12.3 - [Amazon Polly]
+**12.3 - [Amazon Polly](https://youtu.be/j2zwFkNLQfI)**
 
-    12.4 - [Amazon Textract]
+**12.4 - [Amazon Textract](https://youtu.be/V5_kK4ZQVGA)**
 
     12.5 - [Amazon Bedrock]
 
