@@ -67,6 +67,10 @@ Exploración de Amazon Q.
 
 Introducción a Amazon Bedrock y sus aplicaciones.
 
+[Grabación](https://youtube.com/live/C09kXmoFThM)
+
+[Slides](recursos/Semana_5_Challenge_AWS_AI_Practitioner.pdf)
+
 ## 🌟 Semanas exclusivas para suscriptores
 
 ## Semana 6: 📘 Simuladores de preguntas
