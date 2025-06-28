@@ -1,6 +1,6 @@
 # 🧠 Revisor de Arquitecturas Cloud con IA (Claude 3 Sonnet + AWS)
 
-![LabCloud]()
+![LabCloud](./imagenes/revisor_arquitectura_IA.png)
 
 ¡Bienvenido al Workshop práctico más innovador del AWS Community Day\! 🚀    
 Aquí vas a construir desde cero una aplicación de IA capaz de **analizar imágenes de diagramas de arquitectura Cloud** y darte recomendaciones automáticas usando modelos avanzados de Amazon Bedrock.    
@@ -43,7 +43,7 @@ Este taller es para ti si:
 
 ## ⚙️ Diagrama de arquitectura aplicación
 
-![diagrama]()
+![diagrama](./imagenes/Diagrama_arquitectura_Cloud_drawio.png)
 
 —
 
@@ -56,7 +56,8 @@ Este taller es para ti si:
 - Desactiva el bloqueo público  
 - Configura las siguientes políticas y CORS (ver detalles en el documento original)
 - Policy para bucket
-'''
+
+```bash
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -69,7 +70,7 @@ Este taller es para ti si:
     }
   ]
 }
-'''
+```
 
 #### 🌐 Bucket para el sitio web  
 - Nombre sugerido: `revisor-web-bucket`  
@@ -123,11 +124,12 @@ Este taller es para ti si:
 
 ## 💬 Prompt utilizado en el análisis
 
-```text  
+```text
 1. Lista los servicios de AWS que aparecen en el diagrama.  
 2. Describe el flujo de comunicación entre componentes.  
 3. Sugiere mejoras concretas por cada pilar del AWS Well Architected Framework.  
 📌 Nota: No inventes servicios que no estén presentes visualmente.
+```
 
 ## ✅ Checklist rápido  
  Buckets creados y configurados
@@ -178,6 +180,14 @@ Análisis del output	10 min
 ---
 
 🎉 ¡Felicidades por construir tu primera APP con IA!
+
+---
+
+## 📢 Encuesta
+
+![diagrama](./imagenes/encuestaQR.jpeg)
+
+Link encuesta https://forms.gle/coddS6mpSvUjFzCn8
 
 
 ## 📝 Licencia
