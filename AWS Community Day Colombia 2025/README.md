@@ -202,14 +202,17 @@ Análisis del output	               10 min
 👉 En la segunda parte del laboratorio extenderemos la app con Amazon Textract para analizar texto (OCR) en los diagramas y generar insights aún más profundos.  
 🎯 ¡Estás construyendo un sistema real de IA aplicada a arquitectura cloud!
 
-### 🧠 "Hoy le enseñaste a una IA a evaluar arquitecturas... ¡mañana podrías enseñarle a construirlas\!" 💥
+🧠 **"Hoy le enseñaste a una IA a evaluar arquitecturas... ¡mañana podrías enseñarle a construirlas!"** 💥
 
 
 ## 📚 Recursos del laboratorio
 
 **1. Códigos Lambda** [aquí](./recursos/recursos.zip)
+
 **2. Código HTML del frontend** [aquí](./recursos/diagramaspruebas.zip) 
-**3. [Documentación oficial de Amazon Bedrock]**(https://docs.aws.amazon.com/bedrock/)  
+
+**3. [Documentación oficial de Amazon Bedrock]**(https://docs.aws.amazon.com/bedrock/) 
+
 **4. Diagramas de pruebas** [aquí](./recursos/diagramaspruebas.zip)
 
 ---
@@ -225,7 +228,7 @@ Análisis del output	               10 min
 
 ---
 
-🎉 ¡Felicidades por construir tu primera APP con IA!
+🎉 **¡Felicidades por construir tu primera APP con IA!**
 
 ---
 
