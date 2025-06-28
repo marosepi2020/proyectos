@@ -37,21 +37,22 @@ Este taller es para ti si:
 
 📍 *Recuerda trabajar en la región `us-east-1` (Virginia) y tener habilitado Claude 3 Sonnet en Bedrock*
 
-—
-
-## 
 
 ## ⚙️ Diagrama de arquitectura aplicación
 
 ![diagrama](./imagenes/Diagrama_arquitectura_Cloud_drawio.png)
 
-—
+---
 
-## 🪜 Paso a Paso
+## 👣 Paso a Paso
 
 ### 1. Crear los Buckets en S3
 
-#### 🖼️ Bucket para imágenes  
+**Usarás dos buckets:**
+- `revisor-web-bucket`: donde subirás el archivo index.html y activarás el sitio estático
+- `revisor-imagenes-bucket`: donde el HTML subirá la imagen que luego será leída por Lambda
+
+#### 🖼️ Crear Bucket para imágenes  
 - Nombre sugerido: `revisor-imagenes-bucket`  
 - Desactiva el bloqueo público  
 - Configura las siguientes políticas y CORS (ver detalles en el documento original)
@@ -66,50 +67,97 @@ Este taller es para ti si:
       "Effect": "Allow",
       "Principal": "*",
       "Action": ["s3:PutObject", "s3:GetObject"],
-      "Resource": "arn:aws:s3:::revisor-imagenes-bucket/*"
+      "Resource": "arn:aws:s3:::Nombre-bucket-imagenes/*"
     }
   ]
 }
 ```
+- Configurar CORS (Cross-Origin Resource Sharing) para permitir acceso desde HTML
 
-#### 🌐 Bucket para el sitio web  
+```bash
+[
+  {
+    "AllowedHeaders": ["*"],
+    "AllowedMethods": ["PUT", "GET"],
+    "AllowedOrigins": ["*"],
+    "ExposeHeaders": []
+  }
+]
+```
+
+
+#### 🌐 Crear Bucket para el sitio web  
 - Nombre sugerido: `revisor-web-bucket`  
 - Activa el hosting estático  
-- Sube `index.html`  
+- Sube el aechivo `index.html` 
+
+```
+Tener presente que ya se debe tener el api creado para que la url invoke ya este en el index o se cambia despues
+```
+
+- Configura el nombre `index.html`
+- Obtener la URL pública del sitio y abrirlo desde el navegador (Probar el 404 not found ) 
+- Desactiva el bloqueo público
 - Configura permisos de lectura pública
+
+```bash
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "LecturaPublicaBucket",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::Nombre-Bucket-sitio_web_estático/*"
+        }
+    ]
+}
+```
+```
+reemplaza con el nombre real de tu bucket
+```
 
 ---
 
 ### 2. Crear la función Lambda
 
 - Nombre: `revisorClaudeLambda`  
-- Runtime: `Python 3.13`  
+- Runtime: `Python 3.13`
+- Crear rol nuevo con permisos básicos  
 - Aumenta el timeout a 90 segundos  
 - Asigna permisos:  
   - `AmazonS3ReadOnlyAccess`  
   - `AmazonBedrockFullAccess`  
-- Pega el código de `lambda_function.py` y modifica el bucket de imágenes
+- Pega el código de `lambda_function.py` y modifica el nombre del bucket de imágenes en la linea 15
+- Dar deploy a la lambda
 
 ---
 
 ### 3. Crear el API Gateway
 
-- Tipo: REST API  
-- Nombre: `revisor-api`  
-- Recurso: `/analyze\`  
-- Método: POST ➜ Lambda  
-- Habilita CORS  
-- Deploy en `Dev`  
-- Copia el `Invoke URL` para el frontend
+- Ir a API Gateway > Create API > REST API 
+- Nombre: `revisor-api`
+- Crear un recurso: `/analyze`
+- Habilitar CORS en este recurso
+- Crear un método POST vinculado a la Lambda
+- Deploy API en un stage llamado `Dev`
+- Copiar el endpoint `Invoke URL` para el frontend
 
+```
+Ejemplo”https://p0xx5rp8dk.execute-api.us-east-1.amazonaws.com/Dev”
+```
 ---
 
 ### 4. Conectar el Frontend
 
-- Abre el `index.html`  
+- Abre el `index.html` con un editor de texto 
 - Reemplaza:  
-  - URL del API (`apiUrl`)  
-  - Nombre del bucket de imágenes  
+  - URL del API (`apiUrl`) y agrega el recurso `/analyze`
+  - Nombre del bucket de imágenes 
+
+  ![imagen](./imagenes/url_invoke_index.PNG) 
+
 - Sube al bucket del sitio web
 
 ---
@@ -132,39 +180,37 @@ Este taller es para ti si:
 ```
 
 ## ✅ Checklist rápido  
- Buckets creados y configurados
+ - Buckets creados y configurados
 
- Lambda desplegada con permisos
+ - Lambda desplegada con permisos
 
- API Gateway funcionando
+ - API Gateway funcionando
 
- HTML conectado
+ - HTML conectado
 
- Imagen cargada y respuesta recibida 💡
+ - Imagen cargada y respuesta recibida 💡
 
-⏱️ Tiempo estimado  
-Etapa	Tiempo  
-Buckets S3	10 min  
-Lambda	10 min  
-API Gateway + pruebas	10 min  
-HTML + validación	10 min  
-Análisis del output	10 min
+## ⏱️ Tiempo estimado  
+Etapa	                             Tiempo  
+Buckets S3	                       10 min  
+Lambda	                           10 min  
+API Gateway + pruebas	             10 min  
+HTML + validación	                 10 min  
+Análisis del output	               10 min
 
-🚀 ¿Y ahora qué sigue?  
+## 🚀 ¿Y ahora qué sigue?  
 👉 En la segunda parte del laboratorio extenderemos la app con Amazon Textract para analizar texto (OCR) en los diagramas y generar insights aún más profundos.  
-🎯 ¡Estás construyendo un sistema real de IA aplicada a arquitectura cloud\!
+🎯 ¡Estás construyendo un sistema real de IA aplicada a arquitectura cloud!
 
-🧠 Frase Final
-
-### "Hoy le enseñaste a una IA a evaluar arquitecturas... ¡mañana podrías enseñarle a construirlas\!" 💥
+### 🧠 "Hoy le enseñaste a una IA a evaluar arquitecturas... ¡mañana podrías enseñarle a construirlas\!" 💥
 
 
 ## 📚 Recursos del laboratorio
 
-**1. Código Lambda inicial y actualizado**  
-**2. Código HTML del frontend**  
-**3. Documentación oficial de Amazon Bedrock**  
-**4. **
+**1. Códigos Lambda** [aquí](./recursos/recursos.zip)
+**2. Código HTML del frontend** [aquí](./recursos/diagramaspruebas.zip) 
+**3. [Documentación oficial de Amazon Bedrock]**(https://docs.aws.amazon.com/bedrock/)  
+**4. Diagramas de pruebas** [aquí](./recursos/diagramaspruebas.zip)
 
 ---
 

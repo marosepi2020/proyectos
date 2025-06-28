@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Revisor de Arquitecturas Cloud</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9fafb;
+    }
+
+    h1 {
+      color: #1e3a8a;
+    }
+
+    button {
+      margin: 5px;
+      padding: 10px 15px;
+      font-weight: bold;
+      background-color: #1d4ed8;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #2563eb;
+      cursor: pointer;
+    }
+
+    #result {
+      white-space: pre-wrap;
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 8px;
+    }
+
+    #spinner {
+      font-style: italic;
+      color: #0c4a6e;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧠 Revisor de Arquitecturas Cloud</h1>
+
+  <input type="file" id="fileInput" accept="image/*" />
+  <button onclick="uploadImage()">📤 Subir Imagen</button>
+  <button onclick="analyzeImage()">🧪 Ejecutar Análisis</button>
+
+  <p id="uploadStatus"></p>
+  <p id="spinner">⏳ Analizando el diagrama... por favor espera.</p>
+  <div id="result">Aún no se ha realizado ningún análisis.</div>
+
+  <script>
+    const bucketName = 'revisor-imagen-bucket21062025';
+    const region = 'us-east-1';
+    const apiUrl = 'https://agx8kxwqe3.execute-api.us-east-2.amazonaws.com/Dev/analyze';
+
+    async function uploadImage() {
+      const file = document.getElementById('fileInput').files[0];
+      if (!file) {
+        alert("No se seleccionó ninguna imagen.");
+        return;
+      }
+
+      const s3Key = `uploads/${Date.now()}_${file.name}`;
+      const uploadUrl = `https://${bucketName}.s3.${region}.amazonaws.com/${s3Key}`;
+
+      const response = await fetch(uploadUrl, {
+        method: 'PUT',
+        body: file,
+        headers: { 'Content-Type': file.type }
+      });
+
+      if (response.ok) {
+        document.getElementById('uploadStatus').innerText = `✅ Imagen subida: ${s3Key}`;
+        localStorage.setItem("imageKey", s3Key);
+      } else {
+        alert("❌ Error al subir la imagen.");
+        console.error("Error:", response.status, response.statusText);
+      }
+    }
+
+    async function analyzeImage() {
+  	const imageKey = localStorage.getItem("imageKey");
+  	if (!imageKey) {
+    		alert("No se encontró la imagen para analizar.");
+    		return;
+  	}
+
+  	document.getElementById("spinner").style.display = "block";
+  	document.getElementById("result").innerText = "";
+
+  try {
+    const res = await fetch(apiUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ key: imageKey })
+    });
+
+    const text = await res.text();
+    console.log("📦 Texto recibido:", text);
+
+    let outer;
+    try {
+      outer = JSON.parse(text); // primer nivel
+      console.log("🔍 outer.body:", outer.body);
+    } catch (err) {
+      document.getElementById("result").innerText = "❌ Error al parsear outer JSON.";
+      return;
+    }
+
+    let data;
+    try {
+      data = typeof outer.body === "string" ? JSON.parse(outer.body) : outer.body;
+    } catch (err) {
+      document.getElementById("result").innerText = "❌ Error al parsear body interno.";
+      return;
+    }
+
+    document.getElementById("spinner").style.display = "none";
+
+    if (data && data.response) {
+      document.getElementById("result").innerText = data.response;
+    } else {
+      document.getElementById("result").innerText = "⚠️ Sin texto recibido desde el modelo.";
+    }
+
+  } catch (error) {
+    console.error("❌ Error en fetch:", error);
+    document.getElementById("spinner").style.display = "none";
+    document.getElementById("result").innerText = "❌ Error en la llamada: " + error.message;
+  }
+}
+	window.analyzeImage = analyzeImage;
+    	window.uploadImage = uploadImage;
+  </script>
+</body>
+</html>
