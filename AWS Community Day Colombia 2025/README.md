@@ -215,6 +215,8 @@ Análisis del output	               10 min
 
 **4. Diagramas de pruebas** [aquí](./recursos/diagramaspruebas.zip)
 
+**4. Slides presentación** [aquí](./recursos/Tu_diagrama_bajo_la_lupa_de_la_IA_CD_COLOMBIA_2025%20-%20Final.pdf)
+
 ---
 
 ## 📢 Conecta con la comunidad
