@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AgentCore Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #333;
+    }
+    #chatbox {
+      width: 100%;
+      max-width: 600px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      resize: none;
+      font-size: 14px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #0073bb;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #005f99;
+    }
+    #response {
+      margin-top: 20px;
+      padding: 15px;
+      background: #eef6ff;
+      border-radius: 5px;
+      border: 1px solid #cce0ff;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>AgentCore Demo</h1>
+  <div id="chatbox">
+    <textarea id="userInput" rows="3" placeholder="Escribe tu prompt..."></textarea>
+    <button onclick="callAgent()">Enviar</button>
+    <div id="response">Respuesta aquí...</div>
+  </div>
+
+  <script>
+    async function callAgent() {
+      const userInput = document.getElementById("userInput").value;
+      document.getElementById("response").textContent = "⏳ Esperando respuesta...";
+
+      try {
+        // Aquí llamamos a tu backend en Python (ej: FastAPI en http://localhost:8000/ask)
+        const res = await fetch("https://azn7oj7sp7.execute-api.us-east-1.amazonaws.com", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ prompt: userInput })
+        });
+
+        const data = await res.json();
+        document.getElementById("response").textContent = data.response || JSON.stringify(data, null, 2);
+      } catch (err) {
+        document.getElementById("response").textContent = "❌ Error: " + err;
+      }
+    }
+  </script>
+</body>
+</html>

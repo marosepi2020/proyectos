@@ -1,0 +1,111 @@
+﻿# strands_agent_lambda_invoke.py
+import os, json, base64, boto3
+from botocore.exceptions import BotoCoreError, ClientError
+AGENT_RUNTIME_ARN = os.environ["AGENT_RUNTIME_ARN"]
+AGENT_REGION = os.environ.get("AGENT_REGION", "us-east-1")
+LOG_PAYLOAD = os.environ.get("LOG_PAYLOAD", "0") == "1"
+client = boto3.client("bedrock-agentcore", region_name=AGENT_REGION)
+def _resp(status, body_obj):
+   return {
+       "statusCode": status,
+       "headers": {
+           "Content-Type": "application/json",
+           "Access-Control-Allow-Origin": "*",
+           "Access-Control-Allow-Headers": "*",
+           "Access-Control-Allow-Methods": "POST,OPTIONS"
+       },
+       "body": json.dumps(body_obj)
+   }
+def _bad_request(msg, code=400):
+   return _resp(code, {"error": msg})
+def _to_text(obj) -> str:
+   """Convierte StreamingBody/bytes/str/dict en texto."""
+   if obj is None:
+       return ""
+   # StreamingBody u objetos con .read()
+   if hasattr(obj, "read"):
+       return obj.read().decode("utf-8", "ignore")
+   # bytes / bytearray
+   if isinstance(obj, (bytes, bytearray)):
+       return obj.decode("utf-8", "ignore")
+   # str directo
+   if isinstance(obj, str):
+       return obj
+   # dict con posibles envolturas
+   if isinstance(obj, dict):
+       # algunas variantes pueden venir así
+       if "body" in obj:
+           return _to_text(obj["body"])
+       if "text" in obj and isinstance(obj["text"], str):
+           return obj["text"]
+       if "bytes" in obj:
+           try:
+               return base64.b64decode(obj["bytes"]).decode("utf-8", "ignore")
+           except Exception:
+               pass
+       # como última opción, lo serializamos
+       return json.dumps(obj)
+   # cualquier otro tipo
+   return str(obj)
+def _read_agentcore_response(resp: dict) -> str:
+   """
+   Lee la respuesta cualquiera sea la clave: 'payload', 'body' o 'response'.
+   """
+   if "payload" in resp:
+       return _to_text(resp["payload"])
+   if "body" in resp:
+       return _to_text(resp["body"])
+   if "response" in resp:
+       return _to_text(resp["response"])
+   # Si cambia el shape, mostramos claves para depurar
+   raise RuntimeError(f"Unexpected response keys: {list(resp.keys())}")
+def lambda_handler(event, context):
+   try:
+       # Soporte CORS preflight
+       method = (event.get("requestContext", {}).get("http", {}) or {}).get("method") or event.get("httpMethod", "POST")
+       if method == "OPTIONS":
+           return {
+               "statusCode": 204,
+               "headers": {
+                   "Access-Control-Allow-Origin": "*",
+                   "Access-Control-Allow-Headers": "*",
+                   "Access-Control-Allow-Methods": "POST,OPTIONS"
+               },
+               "body": ""
+           }
+       # Cuerpo (HTTP API v2 / REST)
+       body_raw = event.get("body", "{}") or "{}"
+       if event.get("isBase64Encoded"):
+           body_raw = base64.b64decode(body_raw).decode("utf-8", "ignore")
+       data = json.loads(body_raw)
+       # Soportar prompt/messages/input
+       payload = {}
+       if "prompt" in data:
+           payload["prompt"] = data["prompt"]
+       elif "messages" in data:
+           payload["messages"] = data["messages"]
+       elif "input" in data:
+           payload["input"] = data["input"]
+       else:
+           return _bad_request("Provide one of: prompt, messages, input")
+       # Llamada al runtime
+       resp = client.invoke_agent_runtime(
+           agentRuntimeArn=AGENT_RUNTIME_ARN,
+           qualifier="DEFAULT",  # o tu nombre de endpoint estable
+           contentType="application/json",
+           accept="application/json",
+           payload=json.dumps(payload).encode("utf-8")
+       )
+       result_text = _read_agentcore_response(resp)
+       if LOG_PAYLOAD:
+           print("AgentCore raw:", result_text[:4000])
+       # Intentar parsear JSON
+       try:
+           parsed = json.loads(result_text)
+           return _resp(200, parsed)
+       except Exception:
+           return _resp(200, {"response": result_text})
+   except (BotoCoreError, ClientError) as e:
+       return _bad_request(f"AWS error: {str(e)}", 502)
+   except Exception as e:
+       return _bad_request(f"Unhandled error: {str(e)}", 500)

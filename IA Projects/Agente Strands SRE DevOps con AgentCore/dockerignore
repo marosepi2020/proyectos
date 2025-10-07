@@ -1,0 +1,23 @@
+# Ignore local noise
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*.DS_Store
+.env
+.venv
+venv/
+dist/
+build/
+.eggs/
+*.egg-info/
+.git/
+.gitignore
+# Large assets or notebooks not needed in the image
+*.ipynb
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.svg
