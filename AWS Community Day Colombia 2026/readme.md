@@ -1,6 +1,6 @@
 # 🚀 De cero a tu propio ChatGPT con tus datos: construye un RAG con Amazon Bedrock
 
-![Workshop Banner](./assets/banner.png)
+![Workshop Banner](./recursos/banner.png)
 
 ## 🎯 Objetivo del Workshop
 
@@ -31,6 +31,9 @@ Modelo de lenguaje en Amazon Bedrock
   ↓
 Respuesta basada en contexto
 ```
+
+![Flujo](./recursos/flujo_RAG_con_Bedrock.png)
+
 
 En palabras simples:
 
@@ -67,6 +70,9 @@ La solución utiliza los siguientes servicios de AWS:
 | Embeddings | Convertir texto en representaciones numéricas para búsqueda semántica |
 | Vector Store administrado por Bedrock | Almacenar y buscar fragmentos relevantes de los documentos |
 | Amazon Bedrock Playground | Probar preguntas y respuestas del asistente |
+
+![Arquitectura](./recursos/arquitectura.png)
+
 
 ---
 
