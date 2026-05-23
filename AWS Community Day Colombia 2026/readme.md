@@ -774,6 +774,8 @@ Después de completar este laboratorio, puedes extender la solución con:
 **Mario R. Serrano Pineda**  
 DevOps SRE | Solutions Architect | AWS Community Builder | AWS New Voices 2026
 
+![conectemos](./recursos/LinkedIn_Mario.png)
+
 Comunidad: **CloudOps Guild**
 
 ---
@@ -797,3 +799,10 @@ La idea es que puedas tomar este ejemplo, adaptarlo a tus propios documentos y e
 
 Si este laboratorio te fue útil, puedes apoyar el repositorio con una estrella ⭐ y compartirlo con otras personas interesadas en aprender AWS, DevOps e Inteligencia Artificial.
 
+---
+
+## Encuesta
+
+Ayudanos respondiendo la encuesta
+
+![encuesta](./recursos/workshop-de-cero-a-tu-propio-chatgpt-con-tus-dato_serrano_1200086_feedback-code%20(1).png)
