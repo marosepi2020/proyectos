@@ -1,0 +1,27 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowBedrockKnowledgeBaseRAG",
+            "Effect": "Allow",
+            "Action": [
+                "bedrock:Retrieve",
+                "bedrock:RetrieveAndGenerate"
+            ],
+            "Resource": [
+                "arn:aws:bedrock:us-east-1:961341512808:knowledge-base/YYYTBTYHGT"
+            ]
+        },
+        {
+            "Sid": "AllowInvokeNovaMicro",
+            "Effect": "Allow",
+            "Action": [
+                "bedrock:InvokeModel",
+                "bedrock:InvokeModelWithResponseStream"
+            ],
+            "Resource": [
+                "arn:aws:bedrock:us-east-1::foundation-model/amazon.nova-micro-v1:0"
+            ]
+        }
+    ]
+}

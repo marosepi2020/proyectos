@@ -295,31 +295,9 @@ Cuando termine la carga, tu documento estará disponible en S3.
 
 ---
 
-## Paso 5: Habilitar modelos en Amazon Bedrock
+## Paso 5: Verificar permisos para modelos en Amazon Bedrock
 
-Antes de usar Amazon Bedrock, debes habilitar acceso a los modelos.
-
-### Pasos:
-
-1. En la barra de búsqueda de AWS escribe:
-
-```text
-Bedrock
-```
-
-2. Entra a **Amazon Bedrock**.
-3. En el menú izquierdo busca la opción **Model access**.
-4. Haz clic en **Modify model access**.
-5. Habilita los modelos necesarios para el laboratorio.
-
-Para este laboratorio se recomienda habilitar:
-
-- Un modelo de embeddings, por ejemplo **Amazon Titan Embeddings**.
-- Un modelo de texto para respuestas, por ejemplo **Amazon Nova**, **Claude** u otro modelo disponible en tu cuenta.
-
-6. Guarda los cambios.
-
-> Nota: En algunas cuentas, el acceso puede tardar algunos minutos en activarse.
+Antes de usar Amazon Bedrock, debes habilitar acceso a los modelos a través de IAM.
 
 ---
 
@@ -761,6 +739,8 @@ Al completar este laboratorio, habrás aprendido:
 
 Después de completar este laboratorio, puedes extender la solución con:
 
+![qué sigue](./recursos/siguientes_pasos.png)
+
 - Una interfaz web en HTML
 - API Gateway + Lambda
 - Autenticación de usuarios
@@ -777,6 +757,17 @@ Después de completar este laboratorio, puedes extender la solución con:
 > No se trata solo de usar IA. Se trata de construir soluciones reales con IA usando datos propios, contexto y arquitectura cloud.
 
 ---
+
+## Recursos workshop
+
+1. Policy Lambda [aquí](./recursos/Policy_Lambda.txt)
+2. Código Lambda [aquí](./recursos/codigo_lambda.txt)
+3. Imagen logo [aquí](./recursos/logo.PNG)
+4. BD Knowledge v1 [aquí](./recursos/soporte-tecnico-v1.md)
+5. BD Knowledge v2 [aquí](./recursos/soporte-tecnico-v2.md)
+6. Datos conexión Workshop [aquí](./recursos/datos_conexion_lab.txt)
+
+
 
 ## 👨‍💻 Autor
 

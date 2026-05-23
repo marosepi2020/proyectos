@@ -1,0 +1,60 @@
+
+Datos usuario administrador laboratorios
+
+https://961341512808.signin.aws.amazon.com/console
+
+lab-admin
+
+AdminLab2026@
+
+Nombre Rol en assume rol 
+OrganizationAccountAccessRole
+
+127145910078
+217343504771
+428890020736
+679625721734
+390457493077
+882491246944
+544917027605
+740141504826
+221119316370
+072928014645
+820057617719
+787562501615
+880370049901
+920902432163
+836101686361
+853869586691
+862859970673
+863325528928
+424470773585
+346032390549
+285690764823
+429913930871
+
+
+
+url web rag prueba
+http://rag-bedrock-workshop-mrsp20052026-web.s3-website-us-east-1.amazonaws.com/
+
+
+
+MODEL_ARN   arn:aws:bedrock:us-east-1::foundation-model/amazon.nova-micro-v1:0
+KNOWLEDGE_BASE_ID
+AWS_REGION_RAG   us-east-1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
