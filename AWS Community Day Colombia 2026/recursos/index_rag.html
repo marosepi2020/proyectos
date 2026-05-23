@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GuildBot RAG | CloudOps Guild</title>
+
+  <style>
+    :root {
+      --guild-blue: #2E3192;
+      --guild-gold: #C9A24D;
+      --soft-bg: #E8EAFF;
+      --text: #1f2937;
+      --muted: #6B7280;
+      --white: #ffffff;
+      --danger: #dc2626;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, var(--soft-bg), #ffffff);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+    }
+
+    .app {
+      width: 100%;
+      max-width: 920px;
+      height: 92vh;
+      background: var(--white);
+      border-radius: 28px;
+      box-shadow: 0 24px 60px rgba(46, 49, 146, 0.18);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid rgba(46, 49, 146, 0.12);
+    }
+
+    .header {
+      background: var(--guild-blue);
+      color: var(--white);
+      padding: 22px 26px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+      background: var(--white);
+      border-radius: 18px;
+      padding: 6px;
+    }
+
+    .header-text h1 {
+      margin: 0;
+      font-size: 1.65rem;
+      line-height: 1.1;
+    }
+
+    .header-text p {
+      margin: 6px 0 0;
+      color: #e5e7eb;
+      font-size: 0.95rem;
+    }
+
+    .badge {
+      margin-left: auto;
+      background: var(--guild-gold);
+      color: #111827;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
+
+    .chat {
+      flex: 1;
+      padding: 24px;
+      overflow-y: auto;
+      background:
+        radial-gradient(circle at top left, rgba(201, 162, 77, 0.12), transparent 35%),
+        #f9fafb;
+    }
+
+    .message {
+      display: flex;
+      margin-bottom: 16px;
+    }
+
+    .message.user {
+      justify-content: flex-end;
+    }
+
+    .bubble {
+      max-width: 76%;
+      padding: 14px 16px;
+      border-radius: 18px;
+      line-height: 1.5;
+      font-size: 0.96rem;
+      white-space: pre-wrap;
+    }
+
+    .bot .bubble {
+      background: var(--white);
+      border: 1px solid #e5e7eb;
+      border-bottom-left-radius: 6px;
+    }
+
+    .user .bubble {
+      background: var(--guild-blue);
+      color: var(--white);
+      border-bottom-right-radius: 6px;
+    }
+
+    .typing {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .composer {
+      padding: 18px;
+      background: var(--white);
+      border-top: 1px solid #e5e7eb;
+      display: flex;
+      gap: 12px;
+    }
+
+    textarea {
+      flex: 1;
+      resize: none;
+      min-height: 54px;
+      max-height: 130px;
+      border: 1px solid #d1d5db;
+      border-radius: 16px;
+      padding: 14px;
+      font-size: 1rem;
+      outline: none;
+      font-family: inherit;
+    }
+
+    textarea:focus {
+      border-color: var(--guild-blue);
+      box-shadow: 0 0 0 3px rgba(46, 49, 146, 0.12);
+    }
+
+    button {
+      border: none;
+      border-radius: 16px;
+      padding: 0 22px;
+      background: var(--guild-gold);
+      color: #111827;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+    }
+
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .hint {
+      padding: 0 20px 16px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      background: var(--white);
+    }
+
+    .error {
+      color: var(--danger);
+      font-weight: bold;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 0;
+      }
+
+      .app {
+        height: 100vh;
+        border-radius: 0;
+      }
+
+      .header {
+        padding: 16px;
+      }
+
+      .logo {
+        width: 58px;
+        height: 58px;
+      }
+
+      .header-text h1 {
+        font-size: 1.25rem;
+      }
+
+      .badge {
+        display: none;
+      }
+
+      .bubble {
+        max-width: 90%;
+      }
+
+      .composer {
+        padding: 12px;
+      }
+
+      button {
+        padding: 0 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="app">
+    <header class="header">
+      <!-- Sube este logo al mismo bucket/carpeta que el index.html -->
+      <img class="logo" src="cloudops-guild-logo.png" alt="CloudOps Guild Logo" />
+
+      <div class="header-text">
+        <h1>GuildBot Support AI</h1>
+        <p>Tu asistente RAG para soporte técnico con Amazon Bedrock</p>
+      </div>
+
+      <div class="badge">AWS Community Day Lab</div>
+    </header>
+
+    <section id="chat" class="chat">
+      <div class="message bot">
+        <div class="bubble">
+Hola 👋 Soy <strong>GuildBot Support AI</strong>.
+
+Puedo responder preguntas usando únicamente la documentación cargada en la Knowledge Base del laboratorio.
+
+Prueba con una consulta de soporte técnico o pregunta por la información que acabas de sincronizar en S3.
+        </div>
+      </div>
+    </section>
+
+    <section class="composer">
+      <textarea
+        id="userInput"
+        placeholder="Escribe tu pregunta... Ej: ¿Qué debe hacer un usuario si no tiene internet?"
+      ></textarea>
+      <button id="sendButton" onclick="sendMessage()">Enviar</button>
+    </section>
+
+    <div class="hint">
+      Recuerda reemplazar <strong>API_ENDPOINT_URL</strong> por el endpoint real de API Gateway.
+    </div>
+  </main>
+
+  <script>
+    // 1. Reemplaza esta URL con el endpoint Invoke URL de API Gateway.
+    // Ejemplo: https://abc123.execute-api.us-east-1.amazonaws.com/prod/chat
+    const API_ENDPOINT_URL = "https://hcqgv02m4k.execute-api.us-east-1.amazonaws.com/rag";
+
+    const chat = document.getElementById("chat");
+    const userInput = document.getElementById("userInput");
+    const sendButton = document.getElementById("sendButton");
+
+    function addMessage(role, text, extraClass = "") {
+      const message = document.createElement("div");
+      message.className = `message ${role}`;
+
+      const bubble = document.createElement("div");
+      bubble.className = `bubble ${extraClass}`;
+      bubble.textContent = text;
+
+      message.appendChild(bubble);
+      chat.appendChild(message);
+      chat.scrollTop = chat.scrollHeight;
+
+      return message;
+    }
+
+    function updateMessage(messageElement, text, extraClass = "") {
+      const bubble = messageElement.querySelector(".bubble");
+      bubble.textContent = text;
+      bubble.className = `bubble ${extraClass}`;
+      chat.scrollTop = chat.scrollHeight;
+    }
+
+    async function sendMessage() {
+      const question = userInput.value.trim();
+
+      if (!question) return;
+
+      if (API_ENDPOINT_URL.includes("PEGAR_AQUI")) {
+        addMessage("bot", "Falta configurar el endpoint de API Gateway en la variable API_ENDPOINT_URL.", "error");
+        return;
+      }
+
+      addMessage("user", question);
+      userInput.value = "";
+      sendButton.disabled = true;
+
+      const loadingMessage = addMessage("bot", "Consultando la Knowledge Base...", "typing");
+
+      try {
+        const response = await fetch(API_ENDPOINT_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            question: question
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error(`Error HTTP ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        // Soporta varias formas de respuesta desde Lambda:
+        // { answer: "..." }, { response: "..." }, { message: "..." } o body serializado.
+        let answer = data.answer || data.response || data.message;
+
+        if (!answer && data.body) {
+          const parsedBody = typeof data.body === "string" ? JSON.parse(data.body) : data.body;
+          answer = parsedBody.answer || parsedBody.response || parsedBody.message;
+        }
+
+        updateMessage(loadingMessage, answer || "No recibí una respuesta válida desde Lambda.");
+      } catch (error) {
+        console.error(error);
+        updateMessage(
+          loadingMessage,
+          "Ocurrió un error conectando con el backend. Revisa CORS, la URL de API Gateway y los logs de Lambda.",
+          "error"
+        );
+      } finally {
+        sendButton.disabled = false;
+        userInput.focus();
+      }
+    }
+
+    userInput.addEventListener("keydown", function(event) {
+      if (event.key === "Enter" && !event.shiftKey) {
+        event.preventDefault();
+        sendMessage();
+      }
+    });
+  </script>
+</body>
+</html>
