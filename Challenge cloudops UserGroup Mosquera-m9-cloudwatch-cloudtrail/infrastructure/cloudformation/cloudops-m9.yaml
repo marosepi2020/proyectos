@@ -1,0 +1,300 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Description: >
+  CloudOps Challenge Module 9 - Base infrastructure for the
+  Amazon CloudWatch + AWS CloudTrail GameDay.
+
+Parameters:
+
+  VpcId:
+    Type: AWS::EC2::VPC::Id
+    Description: VPC where the CloudOps M9 instance will be deployed.
+
+  SubnetId:
+    Type: AWS::EC2::Subnet::Id
+    Description: Public subnet with Internet connectivity.
+
+  LatestAmiId:
+    Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
+    Default: /aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64
+    Description: Latest Amazon Linux 2023 x86_64 AMI.
+
+Resources:
+
+  # ============================================================
+  # IAM ROLE
+  # ============================================================
+
+  CloudOpsEC2Role:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: cloudops-m9-ec2-role
+      Description: >
+        IAM role for CloudOps Challenge Module 9
+        CloudWatch and CloudTrail laboratory.
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - ec2.amazonaws.com
+            Action:
+              - sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore
+        - arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy
+
+  # ============================================================
+  # INSTANCE PROFILE
+  # ============================================================
+
+  CloudOpsInstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      InstanceProfileName: cloudops-m9-instance-profile
+      Roles:
+        - !Ref CloudOpsEC2Role
+
+  # ============================================================
+  # SECURITY GROUP
+  # ============================================================
+
+  CloudOpsSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupName: cloudops-m9-sg
+      GroupDescription: Security Group for CloudOps Challenge Module 9
+      VpcId: !Ref VpcId
+      SecurityGroupEgress:
+        - IpProtocol: '-1'
+          CidrIp: 0.0.0.0/0
+      Tags:
+        - Key: Name
+          Value: cloudops-m9-sg
+        - Key: Workshop
+          Value: cloudops-m9
+
+  # ============================================================
+  # CLOUDWATCH LOG GROUP
+  # ============================================================
+
+  ApplicationLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: /cloudops/m9/application
+      RetentionInDays: 1
+      Tags:
+        - Key: Workshop
+          Value: cloudops-m9
+
+  # ============================================================
+  # EC2 INSTANCE
+  # ============================================================
+
+  CloudOpsInstance:
+    Type: AWS::EC2::Instance
+    DependsOn:
+      - ApplicationLogGroup
+      - CloudOpsInstanceProfile
+    Properties:
+      ImageId: !Ref LatestAmiId
+      InstanceType: t3.micro
+
+      # Explicit ENI configuration ensures a public IPv4 address,
+      # which keeps this first version simple for SSM and package installs.
+      NetworkInterfaces:
+        - DeviceIndex: '0'
+          AssociatePublicIpAddress: true
+          DeleteOnTermination: true
+          SubnetId: !Ref SubnetId
+          GroupSet:
+            - !Ref CloudOpsSecurityGroup
+
+      IamInstanceProfile: !Ref CloudOpsInstanceProfile
+      Monitoring: true
+
+      Tags:
+        - Key: Name
+          Value: cloudops-m9-instance
+        - Key: Workshop
+          Value: cloudops-m9
+
+      UserData:
+        Fn::Base64:
+          !Sub |
+            #!/bin/bash
+            set -e
+
+            # ==================================================
+            # CloudOps Challenge - Module 9
+            # CloudWatch + CloudTrail GameDay
+            # ==================================================
+
+            dnf update -y
+
+            # --------------------------------------------------
+            # Install required packages
+            # --------------------------------------------------
+
+            dnf install -y stress-ng amazon-cloudwatch-agent
+
+            # --------------------------------------------------
+            # Create lab directory and application log
+            # --------------------------------------------------
+
+            mkdir -p /opt/cloudops
+            mkdir -p /var/log/cloudops
+            touch /var/log/cloudops/application.log
+
+            # --------------------------------------------------
+            # CPU INCIDENT GENERATOR
+            # --------------------------------------------------
+
+            cat > /opt/cloudops/generate-load.sh <<'EOF'
+            #!/bin/bash
+
+            LOG_FILE="/var/log/cloudops/application.log"
+
+            echo "======================================"
+            echo " CloudOps M9 - CPU Incident Generator "
+            echo "======================================"
+            echo
+            echo "Generating CPU load for 5 minutes..."
+            echo "Watch CPUUtilization in CloudWatch."
+            echo
+
+            echo "$(date '+%Y-%m-%d %H:%M:%S') WARN High workload detected - CPU stress test started" >> "$LOG_FILE"
+
+            stress-ng --cpu 2 --timeout 300s &
+            STRESS_PID=$!
+
+            sleep 60
+
+            echo "$(date '+%Y-%m-%d %H:%M:%S') ERROR Application response degraded - High CPU utilization" >> "$LOG_FILE"
+
+            sleep 60
+
+            echo "$(date '+%Y-%m-%d %H:%M:%S') ERROR Processing timeout detected - Application performance degraded" >> "$LOG_FILE"
+
+            wait "$STRESS_PID"
+
+            echo "$(date '+%Y-%m-%d %H:%M:%S') INFO CPU workload finished - Application recovering" >> "$LOG_FILE"
+
+            echo
+            echo "Incident finished."
+            EOF
+
+            chmod +x /opt/cloudops/generate-load.sh
+
+            # --------------------------------------------------
+            # APPLICATION LOG GENERATOR
+            # --------------------------------------------------
+
+            cat > /opt/cloudops/generate-logs.sh <<'EOF'
+            #!/bin/bash
+
+            LOG_FILE="/var/log/cloudops/application.log"
+
+            while true
+            do
+              TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
+              echo "$TIMESTAMP INFO CloudOps application running normally" >> "$LOG_FILE"
+              sleep 10
+            done
+            EOF
+
+            chmod +x /opt/cloudops/generate-logs.sh
+
+            # --------------------------------------------------
+            # SYSTEMD SERVICE
+            # --------------------------------------------------
+
+            cat > /etc/systemd/system/cloudops-log-generator.service <<'EOF'
+            [Unit]
+            Description=CloudOps Module 9 Log Generator
+            After=network.target
+
+            [Service]
+            ExecStart=/opt/cloudops/generate-logs.sh
+            Restart=always
+            User=root
+
+            [Install]
+            WantedBy=multi-user.target
+            EOF
+
+            systemctl daemon-reload
+            systemctl enable cloudops-log-generator
+            systemctl start cloudops-log-generator
+
+            # --------------------------------------------------
+            # CLOUDWATCH AGENT CONFIGURATION
+            # --------------------------------------------------
+
+            cat > /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json <<'EOF'
+            {
+              "agent": {
+                "metrics_collection_interval": 60,
+                "run_as_user": "root"
+              },
+              "logs": {
+                "logs_collected": {
+                  "files": {
+                    "collect_list": [
+                      {
+                        "file_path": "/var/log/cloudops/application.log",
+                        "log_group_name": "/cloudops/m9/application",
+                        "log_stream_name": "{instance_id}"
+                      }
+                    ]
+                  }
+                }
+              },
+              "metrics": {
+                "namespace": "CloudOps/M9",
+                "metrics_collected": {
+                  "mem": {
+                    "measurement": [
+                      "mem_used_percent"
+                    ],
+                    "metrics_collection_interval": 60
+                  }
+                }
+              }
+            }
+            EOF
+
+            # --------------------------------------------------
+            # START CLOUDWATCH AGENT
+            # --------------------------------------------------
+
+            /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl \
+              -a fetch-config \
+              -m ec2 \
+              -s \
+              -c file:/opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json
+
+            # --------------------------------------------------
+            # USER DATA FINISHED
+            # --------------------------------------------------
+
+            echo "$(date '+%Y-%m-%d %H:%M:%S') INFO CloudOps M9 environment initialization completed" >> /var/log/cloudops/application.log
+
+Outputs:
+
+  InstanceId:
+    Description: CloudOps Module 9 EC2 Instance ID
+    Value: !Ref CloudOpsInstance
+
+  SecurityGroupId:
+    Description: Security Group modified during the CloudTrail exercise
+    Value: !GetAtt CloudOpsSecurityGroup.GroupId
+
+  ApplicationLogGroupName:
+    Description: CloudWatch Logs group used during the investigation
+    Value: !Ref ApplicationLogGroup
+
+  SessionManagerTarget:
+    Description: EC2 instance used with AWS Systems Manager Session Manager
+    Value: !Ref CloudOpsInstance
