@@ -236,6 +236,4 @@ CloudTrail registra tanto el cambio como la remediación.
 
 **CloudTrail** ayuda a entender qué está ocurriendo con tu cuenta AWS.
 
-Flujo mental:
-
-`detectar → observar → alertar → investigar → auditar → recuperar`
+![flujo mental](./flujo_mental.png)

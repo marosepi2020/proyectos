@@ -1,4 +1,7 @@
 # 🔥 CloudOps Challenge — Módulo 9
+
+![imagen](./images/charla_modulo9.PNG)
+
 ## Incidente en Producción: ¿Qué está pasando y quién hizo el cambio?
 
 Laboratorio hands-on de **Amazon CloudWatch + AWS CloudTrail** orientado a operaciones CloudOps/SRE.
@@ -73,50 +76,26 @@ El participante **no necesita construir la infraestructura base**.
 
 👉 [Guía del participante](docs/02-participant-guide.md)
 
-Para instructores:
-
-👉 [Guía del instructor](docs/01-instructor-guide.md)
-
-Para desplegar el laboratorio:
-
-👉 [Preparación del entorno](docs/03-environment-setup.md)
-
-Problemas comunes:
-
-👉 [Troubleshooting](docs/05-troubleshooting.md)
-
 ## ⏱️ Duración
 
 Diseñado para un hands-on de aproximadamente **45 minutos**.
 
-## 📦 Infrastructure as Code
+---
 
-El template validado está en:
+✅ Síguenos en nuestras redes sociales:
 
-`infrastructure/cloudformation/cloudops-m9.yaml`
+- **YouTube:** [CloudOps Guild](https://www.youtube.com/@CloudOpsGuildCommunity)
+- **Medium:** [@marioserranopineda](https://medium.com/@marioserranopineda)
+- **LinkedIn:** [Mario Serrano](https://www.linkedin.com/in/mario-rodrigo-serrano-pineda/)
+- **Blog CloudopsGuild:** [Blog](https://cloudopsguild.com/blog/)
+- **LinkedIn CloudOpsGuild:** [CloudOps Guild](https://www.linkedin.com/company/cloudopsguild/)
+- **MeetUp:** [Grupo MeetUp AWS Cartagena Community](https://www.meetup.com/es-ES/aws-colombia-cartagena/)
+- **Facebook:** [AWS Cartagena Community](https://www.meetup.com/es-ES/aws-colombia-cartagena/)
 
-Fue probado end-to-end con:
+---
 
-- CloudFormation `CREATE_COMPLETE`
-- Session Manager
-- CloudWatch Agent
-- CloudWatch Logs
-- `mem_used_percent`
-- `CPUUtilization`
-- CPU stress
-- logs WARN/ERROR
-- recuperación del script
+## 📝 **Licencia**
+Este proyecto está bajo la licencia MIT. Puedes consultar los detalles en el archivo [LICENSE](LICENSE).
 
-## 🛡️ Seguridad del laboratorio
+---
 
-Se recomienda aplicar una SCP de guardrail a la OU de cuentas de laboratorio después de crear la infraestructura.
-
-Consulta:
-
-[Guardrail SCP](docs/06-scp-guardrail.md)
-
-## 🧹 Cleanup
-
-Consulta:
-
-[Cleanup](cleanup/README.md)
