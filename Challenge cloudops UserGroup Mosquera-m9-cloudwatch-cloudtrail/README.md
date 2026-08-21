@@ -75,6 +75,7 @@ El participante **no necesita construir la infraestructura base**.
 ## 🚀 Empieza aquí
 
 👉 [Guía del participante](docs/02-participant-guide.md)
+👉 [Datos ingreso](./docs/labs_cuentas_modulo9.csv)
 
 ## ⏱️ Duración
 
