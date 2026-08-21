@@ -78,6 +78,8 @@ El participante **no necesita construir la infraestructura base**.
 
 👉 [Datos ingreso](./docs/labs_cuentas_modulo9.csv)
 
+👉 [Pasos ingreso](./docs/pasosingreso_lab.pdf)
+
 ## ⏱️ Duración
 
 Diseñado para un hands-on de aproximadamente **45 minutos**.
