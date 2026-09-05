@@ -1,0 +1,62 @@
+[
+  {
+    "id": "INC-001",
+    "question": "What is the recovery target for a SEV-1 incident affecting payment processing?",
+    "expected_answer": "Customer-facing functionality must be restored within 30 minutes.",
+    "category": "incident-management"
+  },
+  {
+    "id": "INC-002",
+    "question": "When must a SEV-1 incident be escalated?",
+    "expected_answer": "The incident must be escalated after 10 minutes if recovery has not been achieved.",
+    "category": "incident-management"
+  },
+  {
+    "id": "INC-003",
+    "question": "Who owns the SEV-1 recovery process?",
+    "expected_answer": "The Incident Commander owns the recovery process.",
+    "category": "incident-management"
+  },
+  {
+    "id": "INC-004",
+    "question": "When must the post-incident review be completed?",
+    "expected_answer": "The post-incident review must be completed within 48 hours.",
+    "category": "incident-management"
+  },
+  {
+    "id": "BKP-001",
+    "question": "How often are production database backups performed?",
+    "expected_answer": "Production databases perform automated backups every 6 hours.",
+    "category": "backup"
+  },
+  {
+    "id": "BKP-002",
+    "question": "What is the RPO for critical customer databases?",
+    "expected_answer": "The Recovery Point Objective is 15 minutes.",
+    "category": "backup"
+  },
+  {
+    "id": "PWD-001",
+    "question": "What is the minimum corporate password length?",
+    "expected_answer": "Corporate passwords must contain at least 14 characters.",
+    "category": "security"
+  },
+  {
+    "id": "PWD-002",
+    "question": "Is MFA mandatory for administrative accounts?",
+    "expected_answer": "Yes. Multi-factor authentication is mandatory for administrative accounts.",
+    "category": "security"
+  },
+  {
+    "id": "CHG-001",
+    "question": "Can emergency changes be implemented without prior CAB approval?",
+    "expected_answer": "Yes, when required to restore a critical service.",
+    "category": "change-management"
+  },
+  {
+    "id": "CHG-002",
+    "question": "When must emergency change documentation be completed?",
+    "expected_answer": "Emergency change documentation must be completed within 24 hours.",
+    "category": "change-management"
+  }
+]
