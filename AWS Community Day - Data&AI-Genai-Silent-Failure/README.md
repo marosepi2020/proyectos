@@ -417,13 +417,10 @@ Ese cambio de mentalidad es el mensaje principal de la charla.
 
 ## 📚 Contenido adicional
 
-En la carpeta [`docs/`](docs/) encontrarás material corto para continuar estudiando:
+En el canal de youtube de la comunidad encontrarás el video demo de la charla y material corto para continuar estudiando:
 
-- [01-fallos-silenciosos.md](docs/01-fallos-silenciosos.md)
-- [02-observabilidad-genai.md](docs/02-observabilidad-genai.md)
-- [03-rag-y-calidad.md](docs/03-rag-y-calidad.md)
-- [04-runbook-incidente.md](docs/04-runbook-incidente.md)
-- [05-preguntas-frecuentes.md](docs/05-preguntas-frecuentes.md)
+- [01-Video demo](youtube)
+- [02-imagenes charla](iamgenes)
 
 ---
 
