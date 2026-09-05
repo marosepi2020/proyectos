@@ -1,5 +1,7 @@
 # Cuando tu IA falla a las 3 AM
 
+![banner](./images/banner.png)
+
 > Guía complementaria de la charla sobre **fallos silenciosos en aplicaciones GenAI sobre AWS**.
 
 Este repositorio no es un laboratorio paso a paso para desplegar infraestructura. Su objetivo es servir como **material de consulta después de la charla**: entender el problema, recorrer la arquitectura mostrada, recordar la demo, reconocer señales de degradación y aplicar prácticas de observabilidad, evaluación y recuperación en soluciones de IA generativa.
@@ -447,6 +449,8 @@ CloudOps Guild · AWS Community
 
 Charla: **Cuando tu IA falla a las 3 AM — fallos silenciosos en GenAI sobre AWS**
 
+![speaker](./images/speaker.png)
+
 ---
 
 ## ⭐ ¿Te fue útil?
@@ -456,3 +460,22 @@ Si este repositorio te ayudó a mirar la observabilidad de GenAI de una forma di
 La pregunta que debería quedar después de la charla es simple:
 
 > **¿Tu sistema sabe que está equivocado aunque siga respondiendo HTTP 200?**
+
+---
+
+✅ Síguenos en nuestras redes sociales:
+
+- **YouTube:** [CloudOps Guild](https://www.youtube.com/@CloudOpsGuildCommunity)
+- **Medium:** [@marioserranopineda](https://medium.com/@marioserranopineda)
+- **LinkedIn:** [Mario Serrano](https://www.linkedin.com/in/mario-rodrigo-serrano-pineda/)
+- **Blog CloudopsGuild:** [Blog](https://cloudopsguild.com/blog/)
+- **LinkedIn CloudOpsGuild:** [CloudOps Guild](https://www.linkedin.com/company/cloudopsguild/)
+- **MeetUp:** [Grupo MeetUp AWS Cartagena Community](https://www.meetup.com/es-ES/aws-colombia-cartagena/)
+- **Facebook:** [AWS Cartagena Community](https://www.meetup.com/es-ES/aws-colombia-cartagena/)
+
+---
+
+## 📝 **Licencia**
+Este proyecto está bajo la licencia MIT. Puedes consultar los detalles en el archivo [LICENSE](LICENSE).
+
+---
