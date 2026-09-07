@@ -419,8 +419,8 @@ Ese cambio de mentalidad es el mensaje principal de la charla.
 
 En el canal de youtube de la comunidad encontrarás el video demo de la charla y material corto para continuar estudiando:
 
-- [01-Video demo](youtube)
-- [02-imagenes charla](iamgenes)
+- [01-Video demo](https://youtu.be/j8LPjJyjKNw)
+- [02-Slides](./images/GenAI_fallo_silencioso_CloudOpsGuild.pdf)
 
 ---
 
