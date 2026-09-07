@@ -422,6 +422,26 @@ En el canal de youtube de la comunidad encontrarás el video demo de la charla y
 - [01-Video demo](https://youtu.be/j8LPjJyjKNw)
 - [02-Slides](./images/GenAI_fallo_silencioso_CloudOpsGuild.pdf)
 
+<p align="center">
+  <img src="./images/IMG_1.jpg" width="48%" />
+  <img src="./images/IMG_2.PNG" width="48%" />
+</p>
+
+<p align="center">
+  <img src="./images/IMG_3.jpg" width="48%" />
+  <img src="./images/IMG_4.jpg" width="48%" />
+</p>
+
+<p align="center">
+  <img src="./images/IMG_5.jpg" width="48%" />
+  <img src="./images/IMG_6.jpg" width="48%" />
+</p>
+
+<p align="center">
+  <img src="./images/IMG_7.jpg" width="48%" />
+  <img src="./images/IMG_8.jpg" width="48%" />
+</p>
+
 ---
 
 ## ☁️ Servicios AWS mencionados
